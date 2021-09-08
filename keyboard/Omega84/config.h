@@ -68,31 +68,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_FUNCTION
 
 // LED 配置
-#define LED_CAPS 4
+//#define LED_CAPS 4
 
 // ws2812 RGB 配置
-#define RGB_DI_PIN 10
+#define RGB_DI_PIN 16
 #define RGBLED_NUM 8
-#define RGBLIGHT_ANIMATIONS
-#define RGB_PWR_PIN 11 // P-mos
+//#define RGBLIGHT_ANIMATIONS
+//#define RGB_PWR_PIN 11 // P-mos
 //#define RGB_PWR_PIN_REVERSE 20 // N-mos
 
 // 3灯指示配置引脚
-#define LED_STATUS_BLE 7
-#define LED_STATUS_USB 6
-#define LED_STATUS_CHARGING 5
-#define LED_BLE_CHANNEL1 7
-#define LED_BLE_CHANNEL2 6
-#define LED_BLE_CHANNEL3 5
+//#define LED_STATUS_BLE 7
+//#define LED_STATUS_USB 6
+//#define LED_STATUS_CHARGING 5
+//#define LED_BLE_CHANNEL1 7
+//#define LED_BLE_CHANNEL2 6
+//#define LED_BLE_CHANNEL3 5
 #define LED_POSITIVE // LED上拉驱动
 
 // 独立硬件按钮
-#define POWER_BUTTON 3
+//#define POWER_BUTTON 3
 
 // USB UART 传输配置
 #define HAS_USB // 启用与CH554的通信支持
-#define UART_RXD 8 // UART_RX口IO 17
-#define UART_TXD 9 // UART_TX口IO 18
+#define UART_RXD 18 // UART_RX口IO 17
+#define UART_TXD 17 // UART_TX口IO 18
 //#define UART_DET 19 // UART 检测引脚，若此脚被拉低，则说明USB正在工作。若不配置则使用RX口作为检测引脚
 #define UART_BAUDRATE NRF_UART_BAUDRATE_115200 // 通信波特率，请不要修改
 
@@ -104,15 +104,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define PIN_STANDBY !UCC2
 
 // 按键阵列配置
-#define MATRIX_ROWS 9 /* 硬件阵列行数 */
-#define MATRIX_COLS 10 /* 硬件阵列列数 */
+#define MATRIX_ROWS 6 /* 硬件阵列行数 */
+#define MATRIX_COLS 20 /* 硬件阵列列数 */
 
 /* key combination for command */
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)))
 
-static const uint8_t row_pin_array[MATRIX_ROWS] = { 26, 30, 29, 28, 27, 12, 13, 14, 15 };
-static const uint8_t column_pin_array[MATRIX_COLS] = { 23, 22, 21, 24, 25, 16, 17, 20, 19, 18 };
+static const uint8_t row_pin_array[MATRIX_ROWS] = { 31, 3, 4, 5, 6, 7 };
+static const uint8_t column_pin_array[MATRIX_COLS] = { 8, 9, 10, 11, 12, 13, 14, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
 #define ROW_IN // 键盘阵列的二极管方向是从COL->ROW
 
 /* define if matrix has ghost */
