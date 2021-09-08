@@ -12,13 +12,10 @@ CONFIG_H_DIR = .
 
 include ./rules.mk
 
-INC_FOLDERS += \
-	. \
-	$(USER_SRC_DIR) \
+INC_FOLDERS += . 
 
 SRC_FILES += \
-	keymap_plain.c \
-	$(USER_SRC_DIR)/user_fn.c
+	keymap_plain.c 
 
 all: default ch554
 
