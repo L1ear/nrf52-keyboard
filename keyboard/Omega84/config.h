@@ -1,3 +1,4 @@
+
 /*
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2019 Jim Jiang <jim@lotlab.org>
@@ -27,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CONF_PRODUCT_ID 0x0318 /* 配置项目内显示的ProductID */
 #define DEVICE_VER 0x0000 /* 硬件版本 */
 #define MANUFACTURER "Lotlab" /* 硬件制造商，用于蓝牙显示 */
-#define PRODUCT "nrF 980" /* 硬件名词，用于蓝牙显示 */
-//#define MACADDR_SEPRATOR ' ' /* 蓝牙名称后地址的分隔符。若不设置则不显示蓝牙名称后面的地址 */
+#define PRODUCT "Omega84" /* 硬件名词，用于蓝牙显示 */
+#define MACADDR_SEPRATOR ' ' /* 蓝牙名称后地址的分隔符。若不设置则不显示蓝牙名称后面的地址 */
 
 /* USB HID report parameter */
 #define KEYBOARD_EPSIZE 8 /* 键盘上传端点大小，请不要修改 */
@@ -68,19 +69,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_FUNCTION
 
 // LED 配置
-//#define LED_CAPS 4
+#define LED_CAPS 30
 
 // ws2812 RGB 配置
-#define RGB_DI_PIN 16
+#define RGB_DI_PIN 26
 #define RGBLED_NUM 8
 //#define RGBLIGHT_ANIMATIONS
 //#define RGB_PWR_PIN 11 // P-mos
 //#define RGB_PWR_PIN_REVERSE 20 // N-mos
 
 // 3灯指示配置引脚
-//#define LED_STATUS_BLE 7
-//#define LED_STATUS_USB 6
-//#define LED_STATUS_CHARGING 5
+#define LED_STATUS_BLE 27
+#define LED_STATUS_USB 28
+#define LED_STATUS_CHARGING 29
 //#define LED_BLE_CHANNEL1 7
 //#define LED_BLE_CHANNEL2 6
 //#define LED_BLE_CHANNEL3 5
@@ -100,19 +101,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BATTERY_ADC_PIN NRF_SAADC_INPUT_AIN0 // 电量检测引脚 Pin 2
 
 // 充电检测配置
-//#define PIN_CHARGING !UCC1
-//#define PIN_STANDBY !UCC2
+#define PIN_CHARGING !UCC1
+#define PIN_STANDBY !UCC2
 
 // 按键阵列配置
-#define MATRIX_ROWS 6 /* 硬件阵列行数 */
-#define MATRIX_COLS 20 /* 硬件阵列列数 */
+#define MATRIX_ROWS 10 /* 硬件阵列行数 */
+#define MATRIX_COLS 11 /* 硬件阵列列数 */
 
 /* key combination for command */
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)))
 
-static const uint8_t row_pin_array[MATRIX_ROWS] = { 31, 3, 4, 5, 6, 7 };
-static const uint8_t column_pin_array[MATRIX_COLS] = { 8, 9, 10, 11, 12, 13, 14, 15, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
+static const uint8_t row_pin_array[MATRIX_ROWS] = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+static const uint8_t column_pin_array[MATRIX_COLS] = { 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25 };
 #define ROW_IN // 键盘阵列的二极管方向是从COL->ROW
 
 /* define if matrix has ghost */
